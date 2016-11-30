@@ -1,0 +1,20 @@
+{
+    "loggerModes" : {
+        "info" : {
+            "message" : "INFO",
+            "style" :   "cyan"
+        },
+        "success" : {
+            "message" : "SUCCESS",
+            "style" :   "green"
+        },
+        "warning" : {
+            "message" : "WARNING",
+            "style" :   "yellow"
+        },
+        "error" : {
+            "message" : "ERROR",
+            "style" :   "red"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "pretty-easy-logs",
+  "version": "0.1.0",
+  "description": "Easy logs to the console",
+  "author": "Ognjen Jevremović <jevremovic.ognjen@gmail.com> (https://github.com/ognjenjevremovic)",
+  "homepage" : "https://github.com/ognjenjevremovic/pretty-easy-logs",
+  "bugs" : {
+      "url" : "https://github.com/ognjenjevremovic/pretty-easy-logs/issues",
+      "email" : "ognjen.jevremovic@gmail.com"
+  },
+  "repository" : {
+      "type" : "git",
+      "url" : "https://github.com/ognjenjevremovic/pretty-easy-logs.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "pretty-easy-dates": "^0.1.2"
+  },
+  "keywords": [
+    "pretty-easy-logs",
+    "pretty-easy-*",
+    "pretty-easy",
+    "prettyeasy",
+    "logs",
+    "log"
+  ]
+}
