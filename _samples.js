@@ -17,7 +17,7 @@ var logs =  require('./index'),
         includeTime : true
     },
     arrayOfValues = [
-        'This is the array of messages',
+        'This is the array of messages\n',
         {message: 'Message from the same array', trace: 'On index position 1', 'with a type of': 'JavaScript object literal'},
         1337
     ];
@@ -29,14 +29,16 @@ return new Promise(function(resolve) {
     }, 1000);
     setTimeout(function() {
         logs(objectMessage_sim);
-    }, 3000);
+    }, 4000);
     setTimeout(function() {
         logs(arrayOfValues);
         return resolve();
-    }, 5000);
+    }, 7000);
 //  2. Object message (one parameter passed that includes configurations as properties)
 }).then(function() {
     return new Promise(promise_cb);
+
+    ////////
     function promise_cb(resolve) {
         setTimeout(function() {
             logs(objectMessage_conf);
@@ -46,6 +48,8 @@ return new Promise(function(resolve) {
 //  3. Two parameters passed (first<message_to_log>, second<string || number || object>)
 }).then(function() {
     return new Promise(promise_cb);
+
+    ////////
     function promise_cb(resolve) {
         setTimeout(function() {
             stringMessage_sim   =   'This is the simple string message, with mode defined as a string';
@@ -54,49 +58,57 @@ return new Promise(function(resolve) {
         setTimeout(function() {
             stringMessage_sim   =   'This is the simple string message, with mode defined as a number value';
             logs(stringMessage_sim, 2);
-        }, 5000);
+        }, 6000);
+        setTimeout(function() {
+            stringMessage_sim   =   'This is the simple string message, that includes time';
+            logs(stringMessage_sim, true);
+        }, 9000);
         setTimeout(function() {
             objectMessage_sim.additions =   'With both mode being set and with time included';
             logs(objectMessage_sim, {
                 mode    :   'information',
                 includeTime :   true
             });
-            return resolve();
-        }, 7000);
-    }
-//  4. Instace of Constructor (simple)
-}).then(function() {
-    var log = new logs();
-    ////////
-    return new Promise(promise_cb);
-    function promise_cb(resolve) {
+        }, 12000);
         setTimeout(function() {
-            stringMessage_sim   =   'This is the SUCCESS message, logged out by using the method on a new instance of a logger';
-            log.scs(stringMessage_sim);
-        }, 3000);
+            stringMessage_sim   =   'This is the simple string message, printed to the file';
+            logs(stringMessage_sim, 'print');
+        }, 15000);
         setTimeout(function() {
-            stringMessage_sim   =   'This is the WARNING message, logged out by using the method on a new instance of a logger';
-            log.warning(stringMessage_sim);
+            objectMessage_conf.additions   +=   ' and will be printed to the file';
+            objectMessage_conf.print        =   true;
+            objectMessage_conf.mode         =   2;
+            logs(objectMessage_conf);
             return resolve();
-        }, 5000);
+        }, 18000);
+
     }
-//  5. Instance of Constructor with predefined configurations
+//  4. Instance of Constructor with predefined configurations
 }).then(function() {
-    var warnLog = new logs(3),
-        scsLog  = new logs({
+    var warnLog         =   new logs('warn'),
+        scsLog_withTime =   new logs({
             mode        :   'success',
             includeTime :   true
-        });
-    ////////
+        }),
+        errLog_all      =   new logs(0);
+
     return new Promise(promise_cb);
+
+    ////////
     function promise_cb(resolve) {
         setTimeout(function() {
-            objectMessage_sim.additions =   'Constructed with an instance of logger, with predefined configurations (including mode and time)';
-            scsLog(objectMessage_sim);
+            objectMessage_sim.additions =   'This WARNING message is output with an instance of logger';
+            warnLog(objectMessage_sim);
         }, 3000);
         setTimeout(function() {
-            objectMessage_sim.additions =   'Constructed with an instance of logger, with predefined configurations';
-            warnLog(objectMessage_sim);
-        }, 5000);
+            objectMessage_sim.additions =   'This SUCCESS message is output with an instance of logger and it includes time';
+            scsLog_withTime(objectMessage_sim);
+        }, 6000);
+        setTimeout(function() {
+            objectMessage_sim.additions =   'This ERROR message is output with an instance of logger';
+            errLog_all(objectMessage_sim);
+        }, 9000);
     }
+}).then(function() {
+    console.log('\nFinished!.');
 });
