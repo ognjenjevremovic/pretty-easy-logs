@@ -11,22 +11,22 @@
 &nbsp;
 
 ### *What is pretty-easy-logs?*
-***pretty-easy-logs*** *is a simple NodeJS module for printing out the messages to the console in a much nicer looking way, intended to help you debug your code and store the suspicious behavior that would otherwise result in an unhandled error*.&nbsp;
+***pretty-easy-logs*** *is a simple NodeJS module for printing out the messages to the console in a much nicer looking way, intended to help you debug your code and store the suspicious behavior that would otherwise result in an unhandled error*.
 You are encouraged to use it in production mode as well, as it is more than just a ***fancy*** logger; it has the ability to print the logs to the files (which is always **true** for the error logs).
 
 
 ### *Why use this module?*
-First of, understanding the errors and successfully debugging your NodeJS code is one of the ***must*** *have set of skills* in your toolkit. Errors that are usually output to the console, as you develop your *Node* applications are most of the time **terrifying** and confusing! Wouldn't it be nice if you could set those on your own and log them to the console the way you wanted them to be? &nbsp;
+First of, understanding the errors and successfully debugging your NodeJS code is one of the ***must*** *have set of skills* in your toolkit. Errors that are usually output to the console, as you develop your *Node* applications are most of the time **terrifying** and confusing! Wouldn't it be nice if you could set those on your own and log them to the console the way you wanted them to be?
 And not just it, what if you could capture those nasty bugs that keep occurring and messing with your code in a production mode *(!!!)* and store them in a file with more information (*logs*) for you to debug and fix with a latter **commit**.
 
-*...well, guess what?* &nbsp;
+*...well, guess what?*
 **Now you can!**
 
 **pretty-easy-logs** is able to log the messages out to the console in a much *fancier* and more *easier to understand* way for you to debug. It is also capable of storing those logs in a file, so you can keep track of bugs that keep messing with your code or you just want to know how many times a certain user typed an incorrect password (*maybe their account has been compromised?*).
 
 ### *How to use this module?*
 In it's simple use it just logs out the message to the console in an ***info*** type mode (which is the default configuration).
-You could also include more information in the message, such as ***date and time*** when the message was written to the console (which is **extremely** useful if you're writing the logs to the files) with just a single (*option*) value. &nbsp;
+You could also include more information in the message, such as ***date and time*** when the message was written to the console (which is **extremely** useful if you're writing the logs to the files) with just a single (*option*) value.
 You can alter the ***color*** and the ***header*** of the output just by changing the **modes.json** file that includes those configurations.
 
 &nbsp;
@@ -95,6 +95,7 @@ you'll need to supply additional ***key/value*** pairs that *will NOT get output
 ```javascript
 var messageObject = {};
 messageObject.output = "Hello world!"; // this is the message to output to the console/print to the '* Logs.txt' file
+
 // These are the 'meta' (configurations) supplied to the object, that will not get into the output
 messageObject.mode = 'scs';
 messageObject.print = true;
@@ -128,7 +129,7 @@ If you'd like to get a simple *string* output to the console or perhaps print mu
     - *'information'* || *'info'*,
     - *'success'* || *'scs'*,
     - *'warning'* || *'warn'*,
-    - *'error'* || *'err'*,
+    - *'error'* || *'err'*
   - ***JavaScript object notation*** with predefined *key/value* pairs:
     - ***mode*** propertie with *predefined keyword* or *number* value (default is ***1*** === ***info***),
     - ***print*** propertie with a boolean value (default is ***false***),
@@ -137,9 +138,9 @@ If you'd like to get a simple *string* output to the console or perhaps print mu
 ```javascript
 // list of messages to output to the console/print to the '* Logs.txt' file
 messageArr = [
-        { message :   'Hello', index   :   0 },
-        { message :   'there', index   :   1 },
-        { message :   'world', index   :   2 }
+        { message : 'Hello', index : 0 },
+        { message : 'there', index : 1 },
+        { message : 'world', index : 2 }
     ],
 
 // Configuration options    
@@ -193,6 +194,7 @@ var infoLog = new logs('info'),    // you could also pass the number 1, string '
 ```
 
 &nbsp;
+
 To use the previously **instantiated** version of *logger* you supply it with a single parameter which is a message you'd like to output (that again can be a simple value = *string* || *number* or list of values = *Array* || *Object* || *Array of Objects*);
 
 ```js
@@ -248,8 +250,8 @@ __Include date and time with the message__ (to include the date and time into ou
   - true*< boolean >*,
   - {includeTime : true}
 
-__**Note that a configuration can be a single value! So if you tend to use warning mode with date and time included and written to the 'warnLogs.txt' file, you'll need to use JavaScipt Object literal syntax.
-The configuration for the error outputs is to ALWAYS print date and time and write to the 'errorLogs.txt' file, not matter the configurations that you set.**__
+***Note that a configuration can be a single value! So if you tend to use warning mode with date and time included and written to the 'warnLogs.txt' file, you'll need to use JavaScipt Object literal syntax.
+The configuration for the error outputs is to ALWAYS print date and time and write to the 'errorLogs.txt' file, not matter the configurations that you set.***
 
 &nbsp;
 
