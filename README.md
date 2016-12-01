@@ -257,11 +257,11 @@ The configuration for the error outputs is to ALWAYS print date and time and wri
 
 ### Want to contribute?
 **Great!**
-Anyone can help make this project better - check out the [github](https://github.com/ognjenjevremovic/pretty-easy-dates) repository!
+Anyone can help make this project better - check out the [github](https://github.com/ognjenjevremovic/pretty-easy-logs) repository!
 
 &nbsp;
 
 ### License
 Copyright (c) 2016 [Ognjen Jevremović](https://github.com/ognjenjevremovic)
 
-Licensed under the [MIT](https://github.com/ognjenjevremovic/pretty-easy-dates/blob/master/LICENSE) License.
+Licensed under the [MIT](https://github.com/ognjenjevremovic/pretty-easy-logs/blob/master/LICENSE) License.
