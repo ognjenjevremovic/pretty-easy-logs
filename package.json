@@ -1,6 +1,6 @@
 {
   "name": "pretty-easy-logs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Easy logs to the console",
   "author": "Ognjen Jevremović <jevremovic.ognjen@gmail.com> (https://github.com/ognjenjevremovic)",
   "homepage" : "https://github.com/ognjenjevremovic/pretty-easy-logs",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "colors": "^1.1.2",
-    "pretty-easy-dates": "^0.1.2"
+    "pretty-easy-dates": "^0.1.4"
   },
   "keywords": [
     "pretty-easy-logs",
